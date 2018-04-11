@@ -4,6 +4,10 @@
 #include<dht.h>
 #include <Wire.h>
 #include "OLED.h"
+
+
+
+
 dht DHT;
 OLED display(14, 12);
 // Define NodeMCU D3 pin to as temperature data pin of  DHT22
