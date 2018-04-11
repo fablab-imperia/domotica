@@ -5,8 +5,13 @@
 #include <Wire.h>
 #include "OLED.h"
 
+#include <DNSServer.h>            //Local DNS Server used for redirecting all requests to the configuration portal
+#include <ESP8266WebServer.h>     //Local WebServer used to serve the configuration portal
+#include <WiFiManager.h>          //https://github.com/tzapu/WiFiManager WiFi Configuration Magic
 
 
+
+WiFiManager wifiManager;
 
 dht DHT;
 OLED display(14, 12);
@@ -97,6 +102,7 @@ void reconnect() {
 } //end reconnect()
 
 void setup() {
+wifiManager.autoConnect();
   Serial.begin(115200);
  // setup_wifi();
     // Initialize display
